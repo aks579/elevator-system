@@ -1,16 +1,19 @@
 # elevator-system
 RESTful API for an elevator system
 
-Components
+**Components**
 
 The project has two components or files - the first is the Elevator.py which is a class representing the elevator. The second is run.py which contains the logic and API endpoints.
 
-Endpoints
+**Endpoints**
 
-GET /elevator - Gets information of all the elevators
+> GET /elevator
 
-Response
+Gets information of all the elevators
 
+**Response**
+
+```
 {
   "Data": [
     {
@@ -36,11 +39,15 @@ Response
     }
   ]
 }
+```
 
-GET /elevator/{elevatorId}/status - Gets the information for a particular elevator
+> GET /elevator/{elevatorId}/status 
 
-Response - 
+Gets the information for a particular elevator
 
+**Response** 
+
+```
 {
   "Data": {
     "currentFloor": 5,
@@ -53,24 +60,34 @@ Response -
     "id": 3
   }
 }
+```
 
-PUT /elevator/{elevatorId}/stop - Endpoint to stop a particular elevator
+> PUT /elevator/{elevatorId}/stop 
 
-Response -
+Endpoint to stop a particular elevator
 
+**Response**
+
+```
 {
   "Message" : "elevator stopped"
 }
+```
 
-PUT /elevator/{elevatorId}/goto - This endpoint is called when a user presses a button inside an elevator to go to a particular floor
+> PUT /elevator/{elevatorId}/goto 
 
-Request - 
+This endpoint is called when a user presses a button inside an elevator to go to a particular floor
 
+**Request**
+
+```
 {"currentFloor":0,
 "finalFloor":5}
+```
 
-Response - 
+**Response**
 
+```
 {
   "Data": {
     "currentFloor": 0,
@@ -83,15 +100,21 @@ Response -
     "id": 3
   }
 }
+```
 
-PUT /elevator/{elevatorId}/state - This endpoint is used to set the status of an elevator
+> PUT /elevator/{elevatorId}/state 
 
-Request - 
+This endpoint is used to set the status of an elevator
 
+**Request**
+
+```
 {"currentFloor":1,"finalFloor":10,"direction":1,"floorRequests":[1,2,3,10]}
+```
 
-Response - 
+**Response**
 
+```
 {
   "Data": {
     "currentFloor": 1,
@@ -106,15 +129,22 @@ Response -
     "id": 2
   }
 }
+```
 
-POST /building - This endpoint is called when a user calls an elevator at any floor. Returns id of the elevator as response
+> POST /building 
 
-Request - 
+This endpoint is called when a user calls an elevator at any floor. Returns id of the elevator as response
 
+**Request**
+
+```
 "{"currentFloor":1,"direction":1}"
+```
 
-Response - 
+**Response**
 
+```
 {
   "id": 0
 }
+```
