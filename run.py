@@ -12,6 +12,11 @@ floors = 10
 def before_first_request_func():
 	global elevators 
 	elevators = [Elevator(i) for i in range(elevator_count)]
+
+@app.route('/',methods=['GET'])
+def index():
+	return '<html><body><h1>REST API design for elevator system</h1><a href="https://github.com/aks579/elevator-system">Documentation</a></body></html>'
+
 	
 @app.route('/elevator/<int:id>/goto',methods=['PUT'])
 def goToFloor(id):
