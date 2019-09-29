@@ -51,7 +51,9 @@ def createRequest():
 		return jsonify({'Error':'invalid floor selection'})
 	elevator_list = [e for e in elevators if e.direction == direction]
 	for e in elevator_list:
-		diff = (currentFloor*direction) - e.currentFloor
+		print(e.floorRequests[0])
+		diff = (currentFloor*direction) - (e.floorRequests[0])
+		print(diff)
 		if diff >= 0:
 			capableElevators.append((diff, e.id))
 	if capableElevators:
