@@ -5,6 +5,13 @@ RESTful API for an elevator system
 
 The project has two components or files - the first is the Elevator.py which is a class representing the elevator. The second is run.py which contains the logic and API endpoints.
 
+The elevator class has the following attributes -
+* **id** - Denotes the id of the elevator
+* **currentFloor** - Denotes the current floor of the elevator
+* **finalFloor** - Denotes the last floor where the elevator has to travel
+* **direction** - The direction where the elevator is traveling; 1 if elevator is traveling upwards, -1 if elevator is traveling downwards and 0 if the elevator is not moving
+* **floorRequests** - Queue which contains the list of floors the elevator has to stop.The floors are represented as (direction * floor)
+
 **Endpoints**
 
 > GET /elevator
